@@ -75,7 +75,7 @@ export default function App() {
             align="center"
             style={{ gap: 2, color: "white", fontWeight: "bold" }}
           >
-            JSD TELECOM
+            Empresa
             <br />
             <span style={{ fontSize: 45 }}>
               EXPERIÊNCIA EM CALL CENTER SANEAMENTO
@@ -86,9 +86,11 @@ export default function App() {
             align="center"
             style={{ marginBottom: 20, color: "white", fontWeight: "bold" }}
           >
-            Oferecemos soluções especializadas em atendimento para empresas de
-            água e saneamento básico em todo o Brasil. <br /> Potencialize a
-            satisfação dos seus clientes com nossos serviços personalizados.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
+            veritatis dicta optio quia autem sunt praesentium dolor non aliquid
+            repellat error, unde dolores ratione fuga nam laborum, voluptatum
+            sequi odit. <br /> Potencialize a satisfação dos seus clientes com
+            nossos serviços personalizados.
           </Typography>
         </ThemeProvider>
       </header>
@@ -130,28 +132,20 @@ export default function App() {
                         fontWeight: "bold",
                       }}
                     >
-                      JSD Telecom: Especialistas em Call Center para empresas de
-                      água em todo o Brasil!
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sint, repellat aliquid fuga nulla tempore reiciendis
+                      ullam. Sit hic pariatur, fuga dolorum ex quod illum magni
+                      cumque sunt quisquam molestias est. Especialistas em Call
+                      Center para empresas de água em todo o Brasil!
                     </span>
                     <br />
                   </Typography>
                   <Typography>
-                    Bem-vindo à JSD Telecom, sua parceira especializada em
-                    soluções de atendimento personalizado para empresas de água
-                    e saneamento básico em todo o Brasil. Com 14 anos de
-                    experiência no mercado de Call center, nos destacamos por
-                    oferecer serviços de alta qualidade e eficiência para
-                    atender às necessidades específicas do setor. Nosso
-                    compromisso é proporcionar um atendimento ao cliente
-                    excepcional, utilizando técnicas de telemarketing, suporte
-                    técnico especializado, pesquisas de satisfação
-                    personalizadas e estratégias de vendas por telefone. Na JSD
-                    Telecom, valorizamos a excelência no relacionamento com os
-                    clientes e buscamos constantemente superar as expectativas,
-                    contribuindo para o sucesso e a satisfação de nossos
-                    parceiros. Conte conosco para impulsionar a visibilidade de
-                    sua empresa e fortalecer a qualidade do atendimento ao seu
-                    público-alvo.
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Harum voluptatibus repellat fugit autem esse illum ex nemo
+                    modi placeat dolores, asperiores perspiciatis necessitatibus
+                    corrupti, tempora architecto rerum similique blanditiis
+                    repellendus.
                   </Typography>
                 </CardContent>
               </Card>

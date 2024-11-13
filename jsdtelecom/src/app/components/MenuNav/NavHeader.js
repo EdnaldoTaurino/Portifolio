@@ -48,11 +48,11 @@ export default function NavHeader({ toggleDrawer, isSmallScreen }) {
       <AppBar position="sticky">
         <Toolbar>
           <a href="/">
-            <Image src="/logo.png" alt="Logo" width={50} height={50} />
+            <Image src="/favicon.png" alt="Logo" width={50} height={50} />
           </a>
           <div style={{ fontWeight: "bolder", paddingLeft: 10 }}>
             <a href="/">
-              <p>JSD Telecom</p>
+              <p>Teste</p>
             </a>
           </div>
 

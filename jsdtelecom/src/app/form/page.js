@@ -51,15 +51,7 @@ const FormPage = () => {
         }}
       >
         <Grid container alignItems="center" marginRight={35}>
-          <Grid item xs={12} md={6} style={{ textAlign: "center" }}>
-            <Image
-              src="/logo.webp"
-              alt="Logo"
-              width={400}
-              height={350}
-              style={{ borderRadius: "48%" }}
-            />
-          </Grid>
+          
           <Grid item xs={12} md={6}>
             <Paper elevation={3} style={{ padding: "2rem" }}>
               <form onSubmit={{}}>
