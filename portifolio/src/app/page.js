@@ -21,6 +21,7 @@ import {
 import NavDrawer from "./components/MenuNav/NavDrawer";
 import DefaultButton from "./components/Buttons/DefaultButton";
 import Footer from "./components/Footer/Footer";
+import projetosList from "./components/projectsList/index";
 import Image from "next/image";
 
 // -------------------------------------------- styles
@@ -46,28 +47,7 @@ export default function App() {
   };
 
   // ! TODO pagina de contato abrir como um modal
-
-  useEffect(() => {
-    const fristLoad = async () => {
-      try {
-        const response = await fetch(
-          "https://api.github.com/users/ednaldotaurino"
-        );
-        const getRepositorios = await fetch(
-          "https://api.github.com/users/ednaldotaurino/repos"
-        );
-        const data = await response.json();
-        const dataRepositorios = await getRepositorios.json();
-        setRepositoriosList(dataRepositorios);
-        setUser(data);
-        console.log(data);
-        console.log(dataRepositorios);
-      } catch (error) {
-        console.error("Erro na requisição:", error);
-      }
-    };
-    fristLoad();
-  }, []);
+  // ? a pagina do github api tem limites de requisições se tiver no limite da erro e nao mostra nada nos cards
 
   return (
     <div className="App" id="Home">
@@ -142,107 +122,35 @@ export default function App() {
           id="servico"
         >
           {/* Projetos */}
-         
-
-          <Grid item xs={12} sm={6} md={4} lg={3.2}>
-            <Card>
-              <CardMedia
-                component="img"
-                image="/atendimento.jpg"
-                alt="Atendimento ao cliente"
-              />
-              <CardContent>
-                <Typography
-                  variant="h6"
-                  align="center"
-                  gutterBottom
-                  style={{ color: "black" }}
-                >
-                  Atendimento ao Cliente
-                </Typography>
-                <Typography
-                  variant="body1"
-                  align="center"
-                  style={{ marginTop: 10, color: "black" }}
-                >
-                  Nosso Atendimento ao Cliente personalizado garante a
-                  satisfação e fidelização dos seus clientes
-                </Typography>
-                <div align="center" style={{ marginTop: 10 }}>
-                  <Link href="/form" passHref>
-                    <DefaultButton buttonText="Fale Conosco" />
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-          </Grid>
-          {/* Telemarketing */}
-          <Grid item xs={12} sm={6} md={4} lg={3.2}>
-            <Card>
-              <CardMedia
-                component="img"
-                image="/telemarketing.jpg"
-                alt="Telemarketing"
-              />
-              <CardContent>
-                <Typography
-                  variant="h6"
-                  align="center"
-                  gutterBottom
-                  style={{ color: "black" }}
-                >
-                  Telemarketing
-                </Typography>
-                <Typography
-                  variant="body1"
-                  align="center"
-                  style={{ marginTop: 10, color: "black" }}
-                >
-                  Nosso serviço de Telemarketing personalizado garante uma
-                  comunicação eficaz e direcionada
-                </Typography>
-                <div align="center" style={{ marginTop: 10 }}>
-                  <Link href="/form" passHref>
-                    <DefaultButton buttonText="Fale Conosco" />
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-          </Grid>
-          {/* Suporte Técnico */}
-          <Grid item xs={12} sm={6} md={4} lg={3.2}>
-            <Card>
-              <CardMedia
-                component="img"
-                image="/suporte.jpg"
-                alt="Suporte Técnico"
-              />
-              <CardContent>
-                <Typography
-                  variant="h6"
-                  align="center"
-                  gutterBottom
-                  style={{ color: "black" }}
-                >
-                  Suporte Técnico
-                </Typography>
-                <Typography
-                  variant="body1"
-                  align="center"
-                  style={{ marginTop: 10, color: "black" }}
-                >
-                  Nosso Suporte Técnico especializado garante soluções rápidas e
-                  eficientes para as demandas das empresas
-                </Typography>
-
-                <div align="center" style={{ marginTop: 10 }}>
-                  <Link href="/form" passHref>
-                    <DefaultButton buttonText="Fale Conosco" />
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-          </Grid>
+          {projetosList.map((projeto, index) => (
+            <Grid item xs={12} sm={6} md={4} lg={3.2} key={index}>
+              <Card>
+                <CardMedia
+                  component="img"
+                  image={projeto.imageUrl}
+                  alt={projeto.name}
+                />
+                <CardContent>
+                  <Typography variant="h6" component="h2">
+                    {projeto.name}
+                  </Typography>
+                  <Typography>{projeto.language}</Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    {projeto.description}
+                  </Typography>
+                  <div align="center" style={{ marginTop: 10 }}>
+                    <Link href={projeto.url} target="_blank" rel="noopener">
+                      <DefaultButton buttonText="Ver Projeto" />
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
       </main>
 
