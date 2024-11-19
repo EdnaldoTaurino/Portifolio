@@ -9,8 +9,8 @@ const projetosList = [
   },
   {
     name: "Projeto 2",
-    description: "Descrição do Projeto 2",
-    imageUrl: "/path/to/image2.jpg",
+    description: "Uma página principal para Companhia de Água e Esgotos",
+    imageUrl: "/projeto-jsd.png",
     language: "Python",
     url: "https://github.com/EdnaldoTaurino/Projeto2",
     demo: "https://jsd-telecom-next-js.vercel.app/",

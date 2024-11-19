@@ -1,11 +1,7 @@
-// use client and cache for react
 "use client";
-import { unstable_noStore as noStore } from "next/cache"; // reset cache NextJs to build project change in dynamic page.
-// css
+import { unstable_noStore as noStore } from "next/cache";
 import "./globals.css";
-// Mui
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Grid,
   Typography,
@@ -16,6 +12,8 @@ import {
   ThemeProvider,
   useMediaQuery,
   Box,
+  Button,
+  Container,
 } from "@mui/material";
 
 // components
@@ -23,141 +21,242 @@ import NavDrawer from "./components/MenuNav/NavDrawer";
 import Footer from "./components/Footer/Footer";
 import projetosList from "./components/projectsList/index";
 import Image from "next/image";
+import { Typewriter } from "react-simple-typewriter";
+import {
+  FaReact,
+  FaNodeJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaGithub,
+} from "react-icons/fa";
+import { SiNextdotjs, SiTypescript, SiMongodb } from "react-icons/si";
+import Link from "next/link";
 
-// -------------------------------------------- styles
-
-const themeFont = createTheme({
+// Enhanced Theme
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#0092E4", // Vibrant blue
+      light: "#4DABF5",
+      dark: "#005CB2",
+    },
+    background: {
+      default: "#F4F6F9",
+      paper: "#FFFFFF",
+    },
+    text: {
+      primary: "#2C3E50",
+      secondary: "#566573",
+    },
+  },
   typography: {
-    fontFamily: "Arial, sans-serif",
+    fontFamily: "'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif",
+    h4: {
+      fontWeight: 700,
+      color: "#2C3E50",
+    },
+    body1: {
+      lineHeight: 1.6,
+    },
+  },
+  shape: {
+    borderRadius: 12,
+  },
+  components: {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          transition: "all 0.3s ease",
+          boxShadow: "0 8px 24px rgba(0,0,0,0.1)",
+          "&:hover": {
+            transform: "translateY(-10px)",
+            boxShadow: "0 12px 32px rgba(0,0,0,0.15)",
+          },
+        },
+      },
+    },
   },
 });
 
-// -------------------------------------------- styles
-
 export default function App() {
-  noStore(); // NextJs
+  noStore();
   const [open, setOpen] = useState(false);
-  const [user, setUser] = useState(null);
-  const [repositoriosList, setRepositoriosList] = useState([]);
   const isSmallScreen = useMediaQuery("(max-width:780px)");
-  const isSmallImageBody = useMediaQuery("(max-width:1080px)");
 
   const toggleDrawer = () => {
     setOpen(!open);
   };
 
-  // ! TODO pagina de contato abrir como um modal
-  // ? a pagina do github api tem limites de requisições se tiver no limite da erro e nao mostra nada nos cards
-
   return (
-    <div className="App" id="Home">
-      {/* Drawer Menu */}
-      <NavDrawer
-        open={open}
-        toggleDrawer={toggleDrawer}
-        isSmallScreen={isSmallScreen}
-      />
-      {/* Drawer Menu */}
-
-      {/* Header */}
-      <header
-        className="App-header"
+    <ThemeProvider theme={theme}>
+      <div
+        className="App"
         style={{
-          backgroundImage: `url("/brackground.jpg")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          position: "relative",
+          backgroundColor: theme.palette.background.default,
+          minHeight: "100vh",
         }}
       >
-        {user && (
-          <div style={{ alignItems: "center", justifyContent: "center" }}>
-            <Image
-              src={user.avatar_url}
-              alt="Avatar"
-              width={200}
-              height={200}
-              className="float-animation"
-              style={{
-                borderRadius: "50%",
-                marginBottom: 20,
-              }}
-              unoptimized
-            />
-          </div>
-        )}
+        {/* NavDrawer */}
+        <NavDrawer
+          open={open}
+          toggleDrawer={toggleDrawer}
+          isSmallScreen={isSmallScreen}
+        />
 
-        <ThemeProvider theme={themeFont}>
-          <Typography
-            variant="h5"
-            align="center"
-            style={{ gap: 2, color: "white", fontWeight: "bold" }}
-          >
-            Olá! sou Ednaldo Taurino | {user?.name}
-            <br />
-          </Typography>
-          <Typography
-            variant="body1"
-            align="center"
-            style={{ marginBottom: 20, color: "white", fontWeight: "bold" }}
-          >
-            Sou: {user?.bio}
-          </Typography>
-        </ThemeProvider>
-      </header>
-
-      {/* Main Content */}
-      <main id="Projetos">
-        {/* Projetos */}
-        <Grid
-          container
-          spacing={4}
-          justifyContent="center"
-          style={{ marginTop: 30, marginBottom: 80 }}
-          id="servico"
+        {/* Header with Gradient */}
+        <header
+          style={{
+            background: "linear-gradient(135deg, #0092E4 0%, #00C6FF 100%)",
+            color: "white",
+            padding: "4rem 0",
+            textAlign: "center",
+            position: "relative",
+            overflow: "hidden",
+          }}
         >
-          {/* Projetos */}
-          {projetosList.map((projeto, index) => (
-            <Grid item xs={12} sm={6} md={4} lg={3.2} key={index}>
-              <Card
-                sx={{
-                  transition: "transform 0.3s, box-shadow 0.3s",
-                  "&:hover": {
-                    transform: "scale(1.05)",
-                    boxShadow: "0 4px 20px rgba(0, 255, 0, 0.5)",
-                  },
+          <Container maxWidth="md">
+            <Box
+              display="flex"
+              flexDirection="column"
+              alignItems="center"
+              gap={3}
+            >
+              <Image
+                src="https://avatars.githubusercontent.com/ednaldotaurino"
+                alt="Avatar"
+                width={200}
+                height={200}
+                style={{
+                  borderRadius: "50%",
+                  border: "6px solid white",
+                  boxShadow: "0 8px 24px rgba(0,0,0,0.2)",
                 }}
-              >
-                <CardMedia
-                  component="img"
-                  image={projeto.imageUrl}
-                  alt={projeto.name}
+                unoptimized
+              />
+
+              <Typography variant="h4" color="inherit" gutterBottom>
+                Olá! Seja bem vindo(a) eu sou:
+              </Typography>
+
+              <Typography variant="h3" color="inherit" fontWeight={700}>
+                <Typewriter
+                  words={["Ednaldo Taurino", "Desenvolvedor Full Stack"]}
+                  loop={false}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={100}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
                 />
-                <CardContent>
-                  <Typography variant="h6" component="h2">
-                    {projeto.name}
-                  </Typography>
-                  <Typography>{projeto.language}</Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    {projeto.description}
-                  </Typography>
-                  <Box
+              </Typography>
+            </Box>
+          </Container>
+        </header>
+
+        {/* About Section */}
+        <Container
+          maxWidth="md"
+          style={{ marginTop: "3rem", marginBottom: "3rem" }}
+        >
+          <Card elevation={4}>
+            <CardContent>
+              <Typography
+                variant="h4"
+                align="center"
+                gutterBottom
+                color="primary"
+              >
+                Sobre mim
+              </Typography>
+
+              <Typography
+                variant="body1"
+                paragraph
+                align="center"
+                color="textSecondary"
+              >
+                Desenvolvedor FullStack com experiência em desenvolvimento de
+                software aplicações web e mobile. Atualmente estou focado em
+                desenvolvimento de aplicações web com React, NextJs, NodeJs,
+                Express, MongoDB, entre outras tecnologias. Estou sempre em
+                busca de novos desafios e aprendizados e foi assim que também
+                fui professor de linguagem de programação no SENAI da Paraíba.
+              </Typography>
+
+              <Typography
+                variant="h5"
+                align="center"
+                gutterBottom
+                style={{ marginTop: "2rem" }}
+                color="primary"
+              >
+                Tecnologias
+              </Typography>
+
+              <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                gap={3}
+                flexWrap="wrap"
+              >
+                {[
+                  { Icon: FaReact, color: "#61DAFB" },
+                  { Icon: SiNextdotjs, color: "#000000" },
+                  { Icon: FaNodeJs, color: "#339933" },
+                  { Icon: SiTypescript, color: "#3178C6" },
+                  { Icon: SiMongodb, color: "#47A248" },
+                  { Icon: FaHtml5, color: "#E34F26" },
+                  { Icon: FaCss3Alt, color: "#1572B6" },
+                ].map(({ Icon, color }, index) => (
+                  <Icon
+                    key={index}
+                    size={50}
+                    color={color}
                     style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      gap: 10,
+                      transition: "transform 0.3s",
+                      "&:hover": { transform: "scale(1.2)" },
                     }}
-                  >
-                    <div style={{ marginTop: 10 }}>
+                  />
+                ))}
+              </Box>
+            </CardContent>
+          </Card>
+        </Container>
+
+        {/* Projects Section */}
+        <Container maxWidth="lg" style={{ marginBottom: "3rem" }}>
+          <Typography variant="h4" align="center" gutterBottom color="primary">
+            Meus Projetos
+          </Typography>
+
+          <Grid container spacing={4} justifyContent="center">
+            {projetosList.map((projeto, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Card>
+                  <CardMedia
+                    component="img"
+                    height="200"
+                    image={projeto.imageUrl}
+                    alt={projeto.name}
+                    style={{ objectFit: "cover" }}
+                  />
+                  <CardContent>
+                    <Typography variant="h6" color="primary" gutterBottom>
+                      {projeto.name}
+                    </Typography>
+                    <Typography variant="subtitle2" color="textSecondary">
+                      {projeto.language}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary">
+                      {projeto.description}
+                    </Typography>
+
+                    <Box
+                      display="flex"
+                      justifyContent="space-between"
+                      marginTop={2}
+                    >
                       <Link href={projeto.url} target="_blank" rel="noopener">
                         <button className="btn">
                           <svg
@@ -174,15 +273,17 @@ export default function App() {
                           GitHub
                         </button>
                       </Link>
-                    </div>
-                    <div style={{ marginTop: 16 }}>
+
                       <Link href={projeto.demo} target="_blank" rel="noopener">
-                        <button type="submit" className="button-demo">
+                        <button className="button-demo">
                           Demo
                           <svg
+                            id="demo"
                             className="svg-icon-demo"
                             viewBox="0 0 16 19"
                             xmlns="http://www.w3.org/2000/svg"
+                            height="30"
+                            width="30"
                           >
                             <path
                               d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
@@ -191,19 +292,16 @@ export default function App() {
                           </svg>
                         </button>
                       </Link>
-                    </div>
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </main>
+                    </Box>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
 
-      {/* Footer */}
-      <footer>
         <Footer />
-      </footer>
-    </div>
+      </div>
+    </ThemeProvider>
   );
 }
