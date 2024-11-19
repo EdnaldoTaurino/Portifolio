@@ -31,7 +31,7 @@ export default function Obrigado() {
       `}</style>
 
       <div>
-        <img src="../img/Nerd_Burguer_Logo.png" alt="NerdBurger" width="400px" />
+        {/* <img src="../img/Nerd_Burguer_Logo.png" alt="NerdBurger" width="400px" /> */}
         <h1>Obrigado por entrar em contato, sua mensagem será avaliada e em breve retornamos.</h1>
 
         <nav id="menu">

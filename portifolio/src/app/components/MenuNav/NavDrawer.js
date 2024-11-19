@@ -38,7 +38,7 @@ export default function NavDrawer({
           <ListItem>
             <ScrollLink
               activeClass="active"
-              to="empresa"
+              to="Projetos"
               spy={true}
               smooth={true}
             >

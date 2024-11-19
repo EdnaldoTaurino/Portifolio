@@ -71,7 +71,7 @@ export default function NavHeader({ toggleDrawer, isSmallScreen }) {
               </ScrollLink>
               <ScrollLink
                 activeClass="active"
-                to="empresa"
+                to="Projetos"
                 spy={true}
                 smooth={true}
               >

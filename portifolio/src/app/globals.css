@@ -110,6 +110,25 @@ a {
   color: inherit;
   text-decoration: none;
 }
+/* animação para a imagem flutuar */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.float-animation {
+  display: inline-block;
+  animation: floatAnimation 2s ease-in-out infinite;
+  margin: 2rem; /* Adiciona uma margem de 2rem */
+}
+/* animação para a imagem flutuar */
 
 @media (prefers-color-scheme: dark) {
   html {

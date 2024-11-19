@@ -37,6 +37,7 @@ export default function App() {
   noStore(); // NextJs
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState(null);
+  const [repositoriosList, setRepositoriosList] = useState([]);
   const isSmallScreen = useMediaQuery("(max-width:780px)");
   const isSmallImageBody = useMediaQuery("(max-width:1080px)");
 
@@ -52,9 +53,15 @@ export default function App() {
         const response = await fetch(
           "https://api.github.com/users/ednaldotaurino"
         );
+        const getRepositorios = await fetch(
+          "https://api.github.com/users/ednaldotaurino/repos"
+        );
         const data = await response.json();
+        const dataRepositorios = await getRepositorios.json();
+        setRepositoriosList(dataRepositorios);
         setUser(data);
         console.log(data);
+        console.log(dataRepositorios);
       } catch (error) {
         console.error("Erro na requisição:", error);
       }
@@ -95,6 +102,7 @@ export default function App() {
               alt="Avatar"
               width={200}
               height={200}
+              className="float-animation"
               style={{
                 borderRadius: "50%",
                 marginBottom: 20,
@@ -124,64 +132,8 @@ export default function App() {
       </header>
 
       {/* Main Content */}
-      <main id="empresa">
-        <Grid container alignItems="center" justifyContent="center" spacing={2}>
-          <Grid item xs={12} md={6}>
-            {!isSmallImageBody && (
-              <div style={{ display: "flex", marginLeft: 20 }}>
-                <Image
-                  src="/body.jpg"
-                  width={800}
-                  height={550}
-                  style={{ marginTop: 120, marginLeft: 160 }}
-                  alt="Atendente call center"
-                />
-              </div>
-            )}
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            md={6}
-            style={{ marginLeft: "auto", marginRight: "auto" }}
-          >
-            <Grid md={8}>
-              <Card>
-                <CardContent>
-                  <Typography
-                    variant="body1"
-                    style={{ color: "#024B12", paddingBottom: 12 }}
-                  >
-                    <span
-                      variant="subtitle1"
-                      style={{
-                        fontSize: 20,
-                        color: "#115016",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Sint, repellat aliquid fuga nulla tempore reiciendis
-                      ullam. Sit hic pariatur, fuga dolorum ex quod illum magni
-                      cumque sunt quisquam molestias est. Especialistas em Call
-                      Center para empresas de água em todo o Brasil!
-                    </span>
-                    <br />
-                  </Typography>
-                  <Typography>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Harum voluptatibus repellat fugit autem esse illum ex nemo
-                    modi placeat dolores, asperiores perspiciatis necessitatibus
-                    corrupti, tempora architecto rerum similique blanditiis
-                    repellendus.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </Grid>
-
-        {/* Atendimento ao Cliente */}
+      <main id="Projetos">
+        {/* Projetos */}
         <Grid
           container
           spacing={4}
@@ -189,7 +141,9 @@ export default function App() {
           style={{ marginTop: 30, marginBottom: 80 }}
           id="servico"
         >
-          {/* Atendimento ao Cliente */}
+          {/* Projetos */}
+         
+
           <Grid item xs={12} sm={6} md={4} lg={3.2}>
             <Card>
               <CardMedia
