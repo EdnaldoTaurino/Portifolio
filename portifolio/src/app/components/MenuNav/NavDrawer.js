@@ -43,19 +43,7 @@ export default function NavDrawer({
               smooth={true}
             >
               <Button color="inherit" onClick={scrollToTop}>
-                A empresa
-              </Button>
-            </ScrollLink>
-          </ListItem>
-          <ListItem>
-            <ScrollLink
-              activeClass="active"
-              to="servico"
-              spy={true}
-              smooth={true}
-            >
-              <Button color="inherit" onClick={scrollToTop}>
-                Serviços
+                Projetos
               </Button>
             </ScrollLink>
           </ListItem>

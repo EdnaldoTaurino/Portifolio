@@ -5,7 +5,7 @@ import { unstable_noStore as noStore } from "next/cache"; // reset cache NextJs 
 import "./globals.css";
 // Mui
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Grid,
   Typography,
@@ -36,12 +36,31 @@ const themeFont = createTheme({
 export default function App() {
   noStore(); // NextJs
   const [open, setOpen] = useState(false);
+  const [user, setUser] = useState(null);
   const isSmallScreen = useMediaQuery("(max-width:780px)");
   const isSmallImageBody = useMediaQuery("(max-width:1080px)");
 
   const toggleDrawer = () => {
     setOpen(!open);
   };
+
+  // ! TODO pagina de contato abrir como um modal
+
+  useEffect(() => {
+    const fristLoad = async () => {
+      try {
+        const response = await fetch(
+          "https://api.github.com/users/ednaldotaurino"
+        );
+        const data = await response.json();
+        setUser(data);
+        console.log(data);
+      } catch (error) {
+        console.error("Erro na requisição:", error);
+      }
+    };
+    fristLoad();
+  }, []);
 
   return (
     <div className="App" id="Home">
@@ -57,7 +76,7 @@ export default function App() {
       <header
         className="App-header"
         style={{
-          backgroundImage: `url("/backGroundImage.jpg")`,
+          backgroundImage: `url("/brackground.jpg")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           height: "100vh",
@@ -69,28 +88,37 @@ export default function App() {
           position: "relative",
         }}
       >
+        {user && (
+          <div style={{ alignItems: "center", justifyContent: "center" }}>
+            <Image
+              src={user.avatar_url}
+              alt="Avatar"
+              width={200}
+              height={200}
+              style={{
+                borderRadius: "50%",
+                marginBottom: 20,
+              }}
+              unoptimized
+            />
+          </div>
+        )}
+
         <ThemeProvider theme={themeFont}>
           <Typography
             variant="h5"
             align="center"
             style={{ gap: 2, color: "white", fontWeight: "bold" }}
           >
-            Empresa
+            Olá! sou Ednaldo Taurino | {user?.name}
             <br />
-            <span style={{ fontSize: 45 }}>
-              EXPERIÊNCIA EM CALL CENTER SANEAMENTO
-            </span>
           </Typography>
           <Typography
             variant="body1"
             align="center"
             style={{ marginBottom: 20, color: "white", fontWeight: "bold" }}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-            veritatis dicta optio quia autem sunt praesentium dolor non aliquid
-            repellat error, unde dolores ratione fuga nam laborum, voluptatum
-            sequi odit. <br /> Potencialize a satisfação dos seus clientes com
-            nossos serviços personalizados.
+            Sou: {user?.bio}
           </Typography>
         </ThemeProvider>
       </header>

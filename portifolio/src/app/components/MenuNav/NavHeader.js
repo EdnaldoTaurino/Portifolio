@@ -52,7 +52,7 @@ export default function NavHeader({ toggleDrawer, isSmallScreen }) {
           </a>
           <div style={{ fontWeight: "bolder", paddingLeft: 10 }}>
             <a href="/">
-              <p>Teste</p>
+              <p>Ednaldo Taurino</p>
             </a>
           </div>
 
@@ -65,7 +65,7 @@ export default function NavHeader({ toggleDrawer, isSmallScreen }) {
                 smooth={true}
               >
                 <Button color="inherit" onClick={scrollToTop}>
-                  <HomeIcon style={{ color: "gray", marginRight: 4 }} />
+                  <HomeIcon style={{ color: "white", marginRight: 4 }} />
                   Home
                 </Button>
               </ScrollLink>
@@ -76,19 +76,10 @@ export default function NavHeader({ toggleDrawer, isSmallScreen }) {
                 smooth={true}
               >
                 <Button color="inherit" onClick={scrollToTop}>
-                  A empresa
+                  Projetos
                 </Button>
               </ScrollLink>
-              <ScrollLink
-                activeClass="active"
-                to="servico"
-                spy={true}
-                smooth={true}
-              >
-                <Button color="inherit" onClick={scrollToTop}>
-                  Serviços
-                </Button>
-              </ScrollLink>
+              
               <ScrollLink
                 activeClass="active"
                 to="sobre"
@@ -102,7 +93,7 @@ export default function NavHeader({ toggleDrawer, isSmallScreen }) {
 
               <Link href="/form" passHref>
                 <Button color="inherit">
-                  <EmailIcon style={{ color: "gray", marginRight: 4 }} />
+                  <EmailIcon style={{ color: "white", marginRight: 4 }} />
                   Contato
                 </Button>
               </Link>
