@@ -65,7 +65,7 @@ export default function NavHeader({ toggleDrawer, isSmallScreen }) {
                 smooth={true}
               >
                 <Button color="inherit" onClick={scrollToTop}>
-                  <HomeIcon style={{ color: "white", marginRight: 4 }} />
+                  <HomeIcon style={{ color: "gray", marginRight: 4 }} />
                   Home
                 </Button>
               </ScrollLink>
@@ -93,7 +93,7 @@ export default function NavHeader({ toggleDrawer, isSmallScreen }) {
 
               <Link href="/form" passHref>
                 <Button color="inherit">
-                  <EmailIcon style={{ color: "white", marginRight: 4 }} />
+                  <EmailIcon style={{ color: "gray", marginRight: 4 }} />
                   Contato
                 </Button>
               </Link>
