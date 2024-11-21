@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 // Mui
 import {
   AppBar,
@@ -7,6 +8,8 @@ import {
   IconButton,
   ThemeProvider,
   createTheme,
+  Dialog,
+  DialogContent,
 } from "@mui/material";
 
 // Components
@@ -16,6 +19,7 @@ import { Menu as MenuIcon, Home as HomeIcon } from "@mui/icons-material";
 import EmailIcon from "@mui/icons-material/Email";
 // React Scroll
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import ContactForm from "../form/ContactForm";
 
 // -------------------------------------------- styles
 
@@ -30,6 +34,16 @@ const colorNavMenu = createTheme({
 // -------------------------------------------- styles
 
 export default function NavHeader({ toggleDrawer, isSmallScreen }) {
+  const [contactOpen, setContactOpen] = useState(false);
+
+  const handleContactOpen = () => {
+    setContactOpen(true);
+  };
+
+  const handleContactClose = () => {
+    setContactOpen(false);
+  };
+
   // Função para rolar suavemente para a seção 'Sobre'
   const scrollToSobre = () => {
     scroll.scrollTo({
@@ -91,12 +105,25 @@ export default function NavHeader({ toggleDrawer, isSmallScreen }) {
                 </Button>
               </ScrollLink>
 
-              <Link href="/form" passHref>
-                <Button color="inherit">
+              {/**Modal de contato  -------------- */}
+              <ScrollLink
+                activeClass="active"
+                to="sobre"
+                spy={true}
+                smooth={true}
+              >
+                <Button color="inherit" onClick={handleContactOpen}>
                   <EmailIcon style={{ color: "gray", marginRight: 4 }} />
                   Contato
                 </Button>
-              </Link>
+              </ScrollLink>
+              <Dialog open={contactOpen} onClose={handleContactClose}>
+                <DialogContent>
+                  <ContactForm />
+                </DialogContent>
+              </Dialog>
+
+              {/**Modal de contato  -------------- */}
             </div>
           ) : (
             <div style={{ marginLeft: "auto" }}>
