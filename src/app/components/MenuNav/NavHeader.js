@@ -33,9 +33,9 @@ export default function NavHeader({ toggleDrawer, isSmallScreen }) {
   // Função para rolar suavemente para a seção 'Sobre'
   const scrollToSobre = () => {
     scroll.scrollTo({
-      duration: 2000, // aumentando a duração para 1 segundo
-      smooth: "easeInOutQuart", // tipo de suavização da animação
-      offset: -70, // ajuste de offset para corrigir a posição
+      duration: 2000,
+      smooth: "easeInOutQuart",
+      offset: -70,
     });
   };
 
@@ -79,7 +79,7 @@ export default function NavHeader({ toggleDrawer, isSmallScreen }) {
                   Projetos
                 </Button>
               </ScrollLink>
-              
+
               <ScrollLink
                 activeClass="active"
                 to="sobre"

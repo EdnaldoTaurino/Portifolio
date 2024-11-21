@@ -1,6 +1,6 @@
 "use client";
 import { unstable_noStore as noStore } from "next/cache";
-import "./globals.css";
+import "../../globals.css";
 import { useState } from "react";
 import {
   Grid,
@@ -28,18 +28,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 //theme Dark Light
-import { lightTheme, darkTheme } from "./components/themeDarkLight/themes";
+import { lightTheme, darkTheme } from "../../components/themeDarkLight/themes";
 
 // components
-import NavDrawer from "./components/MenuNav/NavDrawer";
-import Footer from "./components/Footer/Footer";
-import projetosList from "./components/projectsList/index";
+import NavDrawer from "../../components/MenuNav/NavDrawer";
+import Footer from "../Footer/Footer";
+import projetosList from "../../components/projectsList/index";
 
 export default function Home() {
   noStore();
   const [open, setOpen] = useState(false);
   const isSmallScreen = useMediaQuery("(max-width:780px)");
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleDrawer = () => {
     setOpen(!open);

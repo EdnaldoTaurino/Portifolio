@@ -23,7 +23,7 @@ const Footer = () => {
             justifyContent: "center",
           }}
         >
-          Contato - Fale Conosco: &nbsp;
+          Contato: &nbsp;
           <EmailIcon
             style={{ color: "white", marginRight: 5, marginBottom: 2 }}
           />
@@ -31,10 +31,11 @@ const Footer = () => {
             href="teste@teste.com"
             style={{ color: "white", marginRight: 10 }}
           >
-           teste@teste.com.br
+           ednaldo.taurino5@gmail.com
           </Link>
-          <Link href="https://wa.me/81996629070" target="_blank" style={{ color: "white" }}>
-            (81)9999-99999 &nbsp;
+          {/** ou https://wa.me/+5581996629070 */}
+          <Link href="https://wa.link/b7n15y" target="_blank" style={{ color: "white" }}>
+            (81)99662-9070 &nbsp;
           </Link>
           <WhatsAppIcon
             style={{ color: "white", marginRight: 5, marginBottom: 2 }}
