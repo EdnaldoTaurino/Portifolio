@@ -3,9 +3,9 @@ import { createTheme } from "@mui/material";
 // Tema claro
 const lightTheme = createTheme({
   palette: {
-    mode: "light", // Definindo o modo claro
+    mode: "light",
     primary: {
-      main: "#0092E4", // Vibrant blue
+      main: "#0092E4",
       light: "#4DABF5",
       dark: "#005CB2",
     },
@@ -50,18 +50,18 @@ const lightTheme = createTheme({
 // Tema escuro
 const darkTheme = createTheme({
   palette: {
-    mode: "dark", // Definindo o modo escuro
+    mode: "dark",
     primary: {
       main: "#0092E4",
       light: "#4DABF5",
       dark: "#005CB2",
     },
     background: {
-      default: "#121212", // Fundo escuro
-      paper: "#333333", // Cor do fundo do papel no modo escuro
+      default: "#121212",
+      paper: "#333333",
     },
     text: {
-      primary: "#E0E0E0", // Texto claro no modo escuro
+      primary: "#E0E0E0",
       secondary: "#B0B0B0",
     },
   },

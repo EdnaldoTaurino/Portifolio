@@ -39,7 +39,7 @@ export default function Home() {
   noStore();
   const [open, setOpen] = useState(false);
   const isSmallScreen = useMediaQuery("(max-width:780px)");
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -70,7 +70,9 @@ export default function Home() {
         {/* Header with Gradient */}
         <header
           style={{
-            background: "linear-gradient(135deg, #0092E4 0%, #00C6FF 100%)",
+            background: isDarkMode
+              ? darkTheme.palette.background.default
+              : "linear-gradient(135deg, #0092E4 0%, #00C6FF 100%)",
             color: "white",
             padding: "4rem 0",
             textAlign: "center",
@@ -249,7 +251,11 @@ export default function Home() {
                             viewBox="0 0 24 24"
                             data-name="Layer 1"
                             xmlns="http://www.w3.org/2000/svg"
-                            fill="#0092E4"
+                            fill={
+                              isDarkMode
+                                ? darkTheme.palette.background.default
+                                : "#0092E4 "
+                            }
                             height="30"
                             width="30"
                           >
