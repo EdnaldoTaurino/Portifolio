@@ -139,7 +139,7 @@ export default function Home() {
           maxWidth="md"
           style={{ marginTop: "3rem", marginBottom: "3rem" }}
         >
-          <Card elevation={4}>
+          <Card elevation={4} style={{ height: "100%" }}>
             <CardContent>
               <Typography
                 variant="h4"
@@ -214,7 +214,7 @@ export default function Home() {
           <Grid container spacing={4} justifyContent="center" id="Projetos">
             {projetosList.map((projeto, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card>
+                <Card style={{ height: "100%" }}>
                   <CardMedia
                     component="img"
                     height="200"

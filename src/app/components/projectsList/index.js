@@ -9,13 +9,13 @@ const projetosList = [
     demo: "https://jsd-telecom-next-js.vercel.app/",
   },
   {
-    name: "Projeto 2",
+    name: "Nerddburger Hamburgueria Artesanal",
     description:
-      "Uma página profissional feita para uma Companhia de Água e Esgotos.",
-    imageUrl: "/projeto-jsd.png",
-    language: "Python",
-    url: "https://github.com/EdnaldoTaurino/Projeto2",
-    demo: "https://jsd-telecom-next-js.vercel.app/",
+      "Página de uma hamburgueria artesanal, feita para uma hamburgueria.",
+    imageUrl: "/projeto-nerdburger.png",
+    language: "Html, Css, JavaScript,",
+    url: "https://github.com/EdnaldoTaurino/nerdburger",
+    demo: "https://nerdburger.vercel.app/",
   },
   // Adicione mais projetos conforme necessário
 ];
