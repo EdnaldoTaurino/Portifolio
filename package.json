@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "rmdir /s /q .next && next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "startClean": "rmdir /s /q .next && next build && next dev",
+    "lint": "next lint",
+    "resetCache": "rmdir /s /q .next"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",

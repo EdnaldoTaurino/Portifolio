@@ -62,7 +62,7 @@ export default function NavHeader({ toggleDrawer, isSmallScreen }) {
       <AppBar position="sticky">
         <Toolbar>
           <a href="/">
-            <Image src="/favicon.png" alt="Logo" width={50} height={50} />
+            <Image src="/edy.png" alt="Logo" width={50} height={50} />
           </a>
           <div style={{ fontWeight: "bolder", paddingLeft: 10 }}>
             <a href="/">
