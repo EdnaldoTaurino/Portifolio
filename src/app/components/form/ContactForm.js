@@ -1,16 +1,11 @@
 import React from "react";
-import { TextField, Button, Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 export default function ContactForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Lógica para enviar o formulário
-  };
-
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ p: 2 }}>
+    <Box sx={{ p: 2 }}>
       <Typography variant="h5" sx={{ mb: 2 }}>
         Entre em contato comigo:
       </Typography>
