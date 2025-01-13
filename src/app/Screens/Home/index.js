@@ -15,18 +15,10 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Tooltip,
 } from "@mui/material";
 import { Typewriter } from "react-simple-typewriter";
-import {
-  FaReact,
-  FaNodeJs,
-  FaHtml5,
-  FaCss3Alt,
-  FaSun,
-  FaMoon,
-  FaChevronDown,
-} from "react-icons/fa";
-import { SiNextdotjs, SiTypescript, SiMongodb } from "react-icons/si";
+import { FaSun, FaMoon } from "react-icons/fa";
 import Image from "next/image";
 
 //theme Dark Light
@@ -36,6 +28,7 @@ import { lightTheme, darkTheme } from "../../components/themeDarkLight/themes";
 import NavDrawer from "../../components/MenuNav/NavDrawer";
 import Footer from "../Footer/Footer";
 import SlideCards from "../../components/Carousel/cards";
+import Section from "../../components/aboutSction/section";
 
 export default function Home() {
   noStore();
@@ -137,198 +130,7 @@ export default function Home() {
         </header>
 
         {/* About Section */}
-        <Grid
-          container
-          spacing={4}
-          style={{
-            display: "flex",
-            marginTop: "2rem",
-            marginBottom: "3rem",
-            justifyContent: "center",
-          }}
-        >
-          <Grid item xs={12} md={4}>
-            <Card
-              elevation={4}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <CardContent>
-                <Typography
-                  variant="h4"
-                  align="center"
-                  gutterBottom
-                  color="primary"
-                >
-                  Experiência profissional
-                </Typography>
-                <Typography variant="body1" paragraph color="textSecondary">
-                  <Accordion>
-                    <AccordionSummary
-                      expandIcon={<FaChevronDown />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
-                      <Typography>
-                        <strong>Desenvolvedor Full Stack</strong>
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                    <strong> Desenvolvedor Full Stack</strong> Empresa: Datafort
-                  Tecnologia
-                  <br />
-                  <strong> Localização: </strong>João Pessoa - PB <br />
-                  <strong> Período:</strong> 08/2022 <br />
-                  <strong>Responsabilidades:</strong> <br />
-                  º Desenvolvimento Full Stack, incluindo a criação de
-                  aplicativos web e mobile
-                  <br />
-                  º Usando as tecnologias mais atuais do mercado como: React,
-                  React Native, TypeScript, NodeJs, MongoDb, para oferecer
-                  soluções completas e robustas para os clientes.
-                  <br />
-                  ° Solucionando bugs e implementando novas funcionalidades
-                  <br />
-                  º Colaboração em projetos utilizando metodologias Scrum,
-                  garantindo gerenciamento eficaz
-                  <br />
-                  º Git e GitLab para gerenciamento de versões do projeto.
-                  <br />
-
-                    </AccordionDetails>
-                  </Accordion>
-                  
-                  <Accordion>
-                    <AccordionSummary
-                      expandIcon={<FaChevronDown />} // Ícone de expansão
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
-                      <Typography>
-                        <strong>Professor no SENAI</strong>
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        Durante meu tempo no SENAI da Paraíba, atuei como
-                        professor de linguagens de programação, lecionando
-                        tecnologias como JavaScript, React e React Native. Minha
-                        missão era preparar os alunos para o mercado de
-                        trabalho, focando em projetos práticos.
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                </Typography>
-                <Typography
-                  variant="h5"
-                  align="center"
-                  gutterBottom
-                  style={{ marginTop: "2rem", marginBottom: "1.5rem" }}
-                  color="primary"
-                >
-                  Tecnologias
-                </Typography>
-                <Box
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  gap={3}
-                  flexWrap="wrap"
-                >
-                  {[
-                    { Icon: FaReact, color: "#61DAFB" },
-                    { Icon: SiNextdotjs, color: "#000000" },
-                    { Icon: FaNodeJs, color: "#339933" },
-                    { Icon: SiTypescript, color: "#3178C6" },
-                    { Icon: SiMongodb, color: "#47A248" },
-                  ].map(({ Icon, color }, index) => (
-                    <Icon
-                      key={index}
-                      size={50}
-                      color={color}
-                      style={{
-                        transition: "transform 0.3s",
-                        "&:hover": { transform: "scale(1.2)" },
-                      }}
-                    />
-                  ))}
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Card
-              elevation={4}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                height: "100%",
-              }}
-            >
-              <CardContent>
-                <Typography
-                  variant="h4"
-                  align="center"
-                  gutterBottom
-                  color="primary"
-                >
-                  Sobre mim
-                </Typography>
-                <Typography
-                  variant="body1"
-                  paragraph
-                  align="center"
-                  color="textSecondary"
-                >
-                  Formado em Análise e Desenvolvimento de Sistemas pela UNIPÊ,{" "}
-                  <br />
-                  Sou um Desenvolvedor FullStack especializado em aplicações web
-                  e mobile. Utilizando tecnologias como React, Next.js, Node.js,
-                  Express e MongoDB. Sempre em busca de novos desafios e
-                  aprendizado contínuo,
-                </Typography>
-                <Typography
-                  variant="h5"
-                  align="center"
-                  gutterBottom
-                  style={{ marginTop: "2rem", marginBottom: "1.5rem" }}
-                  color="primary"
-                >
-                  Tecnologias
-                </Typography>
-                <Box
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  gap={3}
-                  flexWrap="wrap"
-                >
-                  {[
-                    { Icon: FaReact, color: "#61DAFB" },
-                    { Icon: SiNextdotjs, color: "#000000" },
-                    { Icon: FaNodeJs, color: "#339933" },
-                    { Icon: SiTypescript, color: "#3178C6" },
-                    { Icon: SiMongodb, color: "#47A248" },
-                    { Icon: FaHtml5, color: "#E34F26" },
-                    { Icon: FaCss3Alt, color: "#1572B6" },
-                  ].map(({ Icon, color }, index) => (
-                    <Icon
-                      key={index}
-                      size={50}
-                      color={color}
-                      style={{
-                        transition: "transform 0.3s",
-                        "&:hover": { transform: "scale(1.2)" },
-                      }}
-                    />
-                  ))}
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
+        <Section />
 
         {/* Projects Section */}
         <Container maxWidth="lg" style={{ marginBottom: "3rem" }}>

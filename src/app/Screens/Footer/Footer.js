@@ -12,7 +12,7 @@ const Footer = () => {
         textAlign: "center",
       }}
     >
-      <div id="sobre">
+      <div>
         <p
           variant="body2"
           style={{
