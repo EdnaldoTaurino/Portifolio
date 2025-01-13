@@ -17,7 +17,23 @@ const projetosList = [
     url: "https://github.com/EdnaldoTaurino/nerdburger",
     demo: "https://nerdburger.vercel.app/",
   },
-  // Adicione mais projetos conforme necessário
+  {
+    name: "Front End CRUD lista de produtos",
+    description: "Este é uma parte do projeto o Front End do CRUD",
+    imageUrl: "/projeto-crud.png",
+    language:
+      "React, Next.js, Hook Form, Zod, TanStack/React Query, PrimeReact",
+    url: "https://github.com/EdnaldoTaurino/CRUD-front-Deploy-productList",
+    demo: "https://front-deploy-product-list.vercel.app/",
+  },
+  {
+    name: "Back End CRUD lista de produtos",
+    description: "Este é o Back End do projeto CRUD lista de produtos",
+    imageUrl: "/back-crud.png",
+    language: "Nest.js, Prisma, PostgreSQL",
+    url: "https://github.com/EdnaldoTaurino/CRUD-deploy-back-nestjs",
+    demo: "https://deploy-back-nestjs.vercel.app/",
+  },
 ];
 
 export default projetosList;
