@@ -31,10 +31,14 @@ const Footer = () => {
             href="teste@teste.com"
             style={{ color: "white", marginRight: 10 }}
           >
-           ednaldo.taurino5@gmail.com
+            ednaldo.taurino5@gmail.com
           </Link>
           {/** ou https://wa.me/+5581996629070 */}
-          <Link href="https://wa.link/b7n15y" target="_blank" style={{ color: "white" }}>
+          <Link
+            href="https://wa.link/b7n15y"
+            target="_blank"
+            style={{ color: "white" }}
+          >
             (81)99662-9070 &nbsp;
           </Link>
           <WhatsAppIcon
@@ -45,7 +49,7 @@ const Footer = () => {
           variant="overline"
           style={{ color: "white", textTransform: "none" }}
         >
-          &copy; Copyright 2024 All rights reserved - Edy Silva
+          &copy; Copyright 2025 All rights reserved - Ednaldo Taurino
         </Typography>
       </div>
     </footer>

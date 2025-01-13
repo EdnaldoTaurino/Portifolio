@@ -58,6 +58,7 @@ export default function SlideCards({ isDarkMode, darkTheme }) {
 
   return (
     <Box
+      id="Projetos"
       sx={{
         position: "relative",
         px: 6,
