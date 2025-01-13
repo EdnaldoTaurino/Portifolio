@@ -1,7 +1,6 @@
 
-# JSDTelecom-NextJs-React
+# Portifólio
 =======
-JSDTelecom
 
 ## Getting Started
 
