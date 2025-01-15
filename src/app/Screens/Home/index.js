@@ -4,18 +4,11 @@ import "../../globals.css";
 import { useState } from "react";
 import {
   Typography,
-  Card,
-  CardContent,
   ThemeProvider,
   useMediaQuery,
   Box,
   Container,
   Button,
-  Grid,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Tooltip,
 } from "@mui/material";
 import { Typewriter } from "react-simple-typewriter";
 import { FaSun, FaMoon } from "react-icons/fa";
