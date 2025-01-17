@@ -24,6 +24,7 @@ import projetosList from "../projectsList";
 
 export default function SlideCards({ isDarkMode, darkTheme }) {
   const isSmallScreen = useMediaQuery("(max-width:800px)");
+  // na api do swiper tem um exemplo de responsividade no carousel https://swiperjs.com/swiper-api#param-breakpoints caso nao queria usar o useMediaQuery
 
   return (
     <Box
