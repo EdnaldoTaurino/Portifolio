@@ -23,7 +23,7 @@ import "swiper/css/pagination";
 import projetosList from "../projectsList";
 
 export default function SlideCards({ isDarkMode, darkTheme }) {
-  const isSmallScreen = useMediaQuery("(max-width:780px)");
+  const isSmallScreen = useMediaQuery("(max-width:800px)");
 
   return (
     <Box
@@ -40,7 +40,7 @@ export default function SlideCards({ isDarkMode, darkTheme }) {
         effect="coverflow"
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={isSmallScreen ? "auto" : 3}
+        slidesPerView={isSmallScreen ? 1 : 3}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
