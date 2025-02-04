@@ -50,7 +50,7 @@ const Page404 = () => {
         <br />
         <Box component="span">Certifique-se de verificar sua ortografia.</Box>
       </Typography>
-      <divs style={{ display: "flex", flexDirection: "row" }}>
+      <div style={{ display: "flex", flexDirection: "row" }}>
         <Typography
           variant="h1"
           style={{ color: "#E75252", fontWeight: "bold" }}
@@ -58,7 +58,7 @@ const Page404 = () => {
           404
         </Typography>
         <Image src="/404.png" alt="erro 404" width={120} height={220} />
-      </divs>
+      </div>
 
       <ButtonTeste href="/">
         <p style={{ color: "white", fontWeight: "bold" }}>Voltar</p>
