@@ -13,7 +13,7 @@ const projetosList = [
     description:
       "Uma página profissional feita para empresa solicitar cadastro.",
     imageUrl: "/empresasCRUD.png",
-    language: "Angular, NodeJs, Express, MongoDB",
+    language: "Angular, typeScript, Axios, Bootstrap 5",
     url: "https://github.com/EdnaldoTaurino/Front-end-Abertura-de-Empresas",
     demo: "https://front-end-abertura-de-empresas.vercel.app/",
   },
